@@ -1,0 +1,7 @@
+Màu logo xah đâm  #045391
+Màu logo xah nhạt #1e8aca
+Màu đen  #000000
+Màu xám đâm
+Màu xám nhạt
+Success  #85b588
+Alert   #ed2024
