@@ -1,0 +1,28 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # Chạy mỗi giờ
+  workflow_dispatch:      # Cho phép chạy thủ công từ giao diện GitHub
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Make daily commit
+        run: |
+          # Ghi thời gian hiện tại vào log.txt
+          echo "$(date)" >> log.txt
+
+          # Cấu hình Git cho action bot
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Thêm thay đổi, commit và push
+          git add log.txt
+          git commit -m "Auto commit $(date)" || echo "No changes to commit"
+          git push
