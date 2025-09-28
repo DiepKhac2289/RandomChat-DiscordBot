@@ -2,7 +2,7 @@ name: Daily Commit
 
 on:
   schedule:
-    - cron: "0 * * * *"  # Chạy mỗi giờ
+    - cron: "0 0 * * *"  # Chạy mỗi giờ
   workflow_dispatch:      # Cho phép chạy thủ công từ giao diện GitHub
 
 jobs:
